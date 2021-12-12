@@ -1,5 +1,5 @@
 import '../css/main.css';
-import { fetchCards } from '../js/fetchCards';
+import { FetchImages } from '../js/fetchImages.js';
 import markup from '../hbs/markup.hbs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
