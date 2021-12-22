@@ -73,3 +73,32 @@ transition: .7s;
   flex-direction: column;
   justify-content: center;
 }
+.search-form {
+  padding: 20px 0;
+  width: 100%;
+  margin-bottom: 25px;
+  background: #514eb1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.search-form input {
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  width: 300px;
+  padding-left: 5px;
+  font-size: 18px;
+  outline-color: #514eb182;
+}
+
+.search-form button {
+  height: 35px;
+  border: none;
+  background: #ceccff;
+  border-radius: 5px;
+  cursor: pointer;
+}
