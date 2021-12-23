@@ -48,33 +48,54 @@ function onLoadMore() {
 function render(data) {
    
   const markup = data
-        .map(({ largeImageURL, webformatURL, likes, views, comments, downloads, }) =>
+        .map(({ largeImageURL, webformatURL, tags, likes, views, comments, downloads, }) =>
         {
           return `
-  <a class="photo-card" href="${largeImageURL}">
-  <div class="img-wrapper">      
-  <img class="img-item" src="${webformatURL}" alt="#" loading="lazy" />
-  <div class="info">
-    <p class="info-item">
+  <a class='photo-card' href="${largeImageURL}">
+  <div class="img-wrapper">
+    <img src='${webformatURL}' alt='${tags}' loading='lazy' />
+  </div>
+  <div class='info'>
+    <p class='info-item'>
       <b>Likes</b>
       <span>${likes}</span>
     </p>
-    <p class="info-item">
+    <p class='info-item'>
       <b>Views</b>
-    <span>${views}</span>
+      <span>${views}</span>
     </p>
-    <p class="info-item">
+    <p class='info-item'>
       <b>Comments</b>
-    <span>${comments}</span>
+      <span>${comments}</span>
     </p>
-    <p class="info-item">
+    <p class='info-item'>
       <b>Downloads</b>
-    <span>${downloads}</span>
+      <span>${downloads}</span>
     </p>
   </div>
-</div>
 </a>`;
         }).join('');
   galleryImages.insertAdjacentHTML('beforeend', markup);
 };
 const lightbox = new SimpleLightbox('.gallery a');
+
+// function lightBox() {
+//   const lightbox = new SimpleLightbox('.gallery a', {
+//     captions: true,
+//     overlay: true,
+//     preloading: true,
+//     alertErrorMessage: 'Изображение не найдено, будет загружено следующее изображение',
+//   });
+//   return lightBox;
+// }
+
+// const lightbox = event => {
+//     event.preventDefault();
+//     new SimpleLightbox('.gallery a',
+//         {
+//             captionsData: 'alt',
+//             captionDelay: 250
+//         }
+//     );
+// };
+// galleryImages.addEventListener('click', settingsSimpleLightbox);

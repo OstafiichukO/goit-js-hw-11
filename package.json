@@ -29,6 +29,7 @@
     "api-service": "^1.0.8",
     "axios": "^0.24.0",
     "notiflix": "^3.2.2",
+    "simple-lightbox": "^2.1.0",
     "simplelightbox": "^2.10.1"
   }
 }
