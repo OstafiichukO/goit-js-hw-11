@@ -35,6 +35,7 @@ function onSearch(event) {
       galleryImages.innerHTML = '';
       const hits = data.hits;
       render(hits);
+      lightbox.refresh()
       // loadMore.removeAttribute(`disabled`, true);
       loadMore.classList.remove('hidden')
       
