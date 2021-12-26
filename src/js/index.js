@@ -13,7 +13,8 @@ const apiService = new APIService;
 
 form.addEventListener('submit', onSearch);
 loadMore.addEventListener('click', onLoadMore);
-loadMore.setAttribute(`disabled`, true);
+// loadMore.setAttribute(`disabled`, true);
+loadMore.classList.add('hidden')
 
 function onSearch(event) {
   event.preventDefault();
@@ -23,7 +24,8 @@ function onSearch(event) {
   if (inputV === '') {
     return 
   }
-  loadMore.setAttribute(`disabled`, true);
+  // loadMore.setAttribute(`disabled`, true);
+  loadMore.classList.add('hidden')
 
   apiService.resetPage();
   apiService.fetchHits()
@@ -33,7 +35,8 @@ function onSearch(event) {
       galleryImages.innerHTML = '';
       const hits = data.hits;
       render(hits);
-      loadMore.removeAttribute(`disabled`, true);
+      // loadMore.removeAttribute(`disabled`, true);
+      loadMore.classList.remove('hidden')
       
     }); 
  
