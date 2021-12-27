@@ -13,8 +13,8 @@ const apiService = new APIService;
 
 form.addEventListener('submit', onSearch);
 loadMore.addEventListener('click', onLoadMore);
-// loadMore.setAttribute(`disabled`, true);
-loadMore.classList.add('hidden')
+loadMore.setAttribute(`disabled`, true);
+// loadMore.classList.add('hidden')
 
 function onSearch(event) {
   event.preventDefault();
@@ -24,20 +24,20 @@ function onSearch(event) {
   if (inputV === '') {
     return 
   }
-  // loadMore.setAttribute(`disabled`, true);
-  loadMore.classList.add('hidden')
+  loadMore.setAttribute(`disabled`, true);
+  // loadMore.classList.add('hidden')
 
   apiService.resetPage();
   apiService.fetchHits()
     .then(data => {
-       const imagesHits = data.totalHits;
-    Notiflix.Notify.success(`Hooray! We found ${imagesHits} images`);
+      const imagesHits = data.totalHits;
       galleryImages.innerHTML = '';
       const hits = data.hits;
       render(hits);
       lightbox.refresh()
-      // loadMore.removeAttribute(`disabled`, true);
-      loadMore.classList.remove('hidden')
+      Notiflix.Notify.success(`Hooray! We found ${imagesHits} images`);
+      loadMore.removeAttribute(`disabled`, true);
+      // loadMore.classList.remove('hidden')
       
     }); 
  
