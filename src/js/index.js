@@ -33,7 +33,8 @@ function onSearch(event) {
     const hits = data.hits;
     render(hits);
     lightbox.refresh();
-
+    // console.log(imagesHits)
+    apiService.incrementCountHits(imagesHits)
     loadMore.removeAttribute(`disabled`, true);
     loadMore.classList.remove('hidden');
   });
@@ -43,6 +44,14 @@ function onLoadMore() {
   apiService.fetchHits().then(data => {
     render(data.hits);
     lightbox.refresh();
+    const renderedMarkup = document.querySelectorAll('.photo-card');
+    // console.log(renderedMarkup.length)
+    // console.log(apiService.totalRenderHits)
+    if (renderedMarkup.length >= apiService.totalRenderHits) {
+      Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+      loadMore.setAttribute(`disabled`, true);
+    }
+    // console.log(totalHits)
   });
 }
 
